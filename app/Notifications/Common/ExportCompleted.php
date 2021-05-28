@@ -45,6 +45,7 @@ class ExportCompleted extends Notification implements ShouldQueue
     public function toMail($notifiable)
     {
         return (new MailMessage)
+            ->from(config('mail.from.address'), setting('company.name'))
             ->subject(trans('notifications.export.completed.subject'))
             ->line(trans('notifications.export.completed.description'))
             ->action(trans('general.download'), $this->download_url);

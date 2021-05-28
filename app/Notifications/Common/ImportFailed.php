@@ -50,6 +50,7 @@ class ImportFailed extends Notification implements ShouldQueue
     public function toMail($notifiable)
     {
         $message = (new MailMessage)
+                        ->from(config('mail.from.address'), setting('company.name'))
                         ->subject(trans('notifications.import.failed.subject'))
                         ->line(trans('notifications.import.failed.description'));
 

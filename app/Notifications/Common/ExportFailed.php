@@ -50,6 +50,7 @@ class ExportFailed extends Notification implements ShouldQueue
     public function toMail($notifiable)
     {
         return (new MailMessage)
+            ->from(config('mail.from.address'), setting('company.name'))
             ->subject(trans('notifications.export.failed.subject'))
             ->line(trans('notifications.export.failed.description'))
             ->line($this->exception->getMessage());

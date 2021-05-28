@@ -41,6 +41,7 @@ class ImportCompleted extends Notification implements ShouldQueue
         $dashboard_url = route('dashboard', ['company_id' => company_id()]);
 
         return (new MailMessage)
+            ->from(config('mail.from.address'), setting('company.name'))
             ->subject(trans('notifications.import.completed.subject'))
             ->line(trans('notifications.import.completed.description'))
             ->action(trans_choice('general.dashboards', 1), $dashboard_url);

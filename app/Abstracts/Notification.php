@@ -40,7 +40,7 @@ abstract class Notification extends BaseNotification implements ShouldQueue
         app('url')->defaults(['company_id' => company_id()]);
 
         $message = (new MailMessage)
-            ->from(config('mail.from.address'), config('mail.from.name'))
+            ->from(config('mail.from.address'), setting('company.name'))
             ->subject($this->getSubject())
             ->view('partials.email.body', ['body' => $this->getBody()]);
 
