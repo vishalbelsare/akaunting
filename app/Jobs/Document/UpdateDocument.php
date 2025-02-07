@@ -22,6 +22,11 @@ class UpdateDocument extends Job implements ShouldUpdate
             $this->request['amount'] = 0;
         }
 
+        // Disable this lines for global discount issue fixed ( https://github.com/akaunting/akaunting/issues/2797 )
+        if (! empty($this->request['discount'])) {
+            $this->request['discount_rate'] = $this->request['discount'];
+        }
+
         event(new DocumentUpdating($this->model, $this->request));
 
         \DB::transaction(function () {
@@ -34,7 +39,7 @@ class UpdateDocument extends Job implements ShouldUpdate
 
                     $this->model->attachMedia($media, 'attachment');
                 }
-            } elseif (!$this->request->file('attachment') && $this->model->attachment) {
+            } elseif (! $this->request->file('attachment') && $this->model->attachment) {
                 $this->deleteMediaModel($this->model, 'attachment', $this->request);
             }
 

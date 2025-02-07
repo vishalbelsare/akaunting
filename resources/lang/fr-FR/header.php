@@ -23,6 +23,11 @@ return [
     ],
 
     'docs_link'             => 'https://akaunting.com/docs',
-    'support_link'          => 'https://akaunting.com/docs',
+    'support_link'          => 'https://akaunting.com/support',
+
+    'favorite' => [
+        'added_favorite'    => 'Ajouté aux favoris',
+        'add_favorite'      => 'Ajouter à votre liste de favoris',
+    ],
 
 ];

@@ -13,6 +13,9 @@ return [
         'export_queued'     => ':type Закажан е извоз на тековната страница! Ќе добиете е -пошта кога е подготвена за преземање.',
         'enabled'           => ':type овозможено!',
         'disabled'          => ':type оневозможено!',
+        'connected'         => ':type поврзано!',
+        'invited'           => ':type поканет!',
+        'ended'             => ':type завршено!',
 
         'clear_all'         => 'пораки.пхп',
     ],
@@ -27,6 +30,8 @@ return [
         'invalid_apikey'    => 'Error: Внесениот токен е невалиден!',
         'import_column'     => 'Error: :message Sheet name: :sheet. Line number: :line.',
         'import_sheet'      => 'Error: Sheet name is not valid. Please, check the sample file.',
+        'same_amount'       => 'Error: Вкупниот износ на поделба мора да биде потполно ист како :transaction total: :amount',
+        'over_match'        => 'Error: :type не е поврзан! Износот што го внесовте не може да го надмине вкупниот износ на уплатата: :amount',
     ],
 
     'warning' => [
@@ -38,6 +43,7 @@ return [
         'reconciled_doc'    => 'Предупредување: Не смеете да менувате/бришете :type затоа што тоа е подмирена трансакција!',
         'disable_code'      => 'Предупредување: Немате дозвола да ја оневозможите или менувате валутата на <b>:name</b> бидејќи е :text поврзано.',
         'payment_cancel'    => 'Предупредување: Го откажавте вашето неодамнешно плаќање: метод!',
+        'missing_transfer'  => 'Предупредување: Недостасува трансферот поврзан со оваа трансакција. Треба да размислите за бришење на оваа трансакција.',
     ],
 
 ];

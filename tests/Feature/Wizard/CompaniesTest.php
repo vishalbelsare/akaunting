@@ -1,4 +1,5 @@
 <?php
+
 namespace Tests\Feature\Wizard;
 
 use Illuminate\Http\UploadedFile;
@@ -35,7 +36,7 @@ class CompaniesTest extends FeatureTestCase
             'financial_start' => '01-04',
             'address' => $this->faker->address,
             'tax_number' => $this->faker->randomNumber(9),
-            'logo' => UploadedFile::fake()->image('akaunting-logo.jpg'),
+            //'logo' => UploadedFile::fake()->image('akaunting-logo.jpg'),
         ];
     }
 }
